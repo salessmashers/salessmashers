@@ -880,7 +880,7 @@ function sendData(val)
     {
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzrYtSCGoL6uf1dNpCothtEQNFtxMKqzpvz3DeLnVFdtpkPuaHg38YqJx-1rJaehrTu/exec';
         const form = document.forms['submit-to-google-sheet'];
-        fetch(scriptURL, {mode: 'cors',
+        fetch(scriptURL, {mode: 'no-cors',
   credentials: 'include', method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!')
       )
