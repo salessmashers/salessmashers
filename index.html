@@ -882,11 +882,12 @@ function sendData(val)
         const form = document.forms['submit-to-google-sheet'];
         fetch(scriptURL, {
         mode: 'no-cors',
+          credentials: 'include'.
         headers: {
            "Content-Type": "multipart/form-data",
         },
           method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!1-multipart/form-data')
+      .then(response => console.log(response)
       )
       .catch(error => console.error('Error!1-multipart/form-data'))
     }
