@@ -883,12 +883,12 @@ function sendData(val)
         fetch(scriptURL, {
         mode: 'no-cors',
         headers: {
-           "Content-Type": "application/x-www-form-urlencoded",
+           "Content-Type": "multipart/form-data",
         },
           method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!1-application/x-www-form-urlencoded')
+      .then(response => console.log('Success!1-multipart/form-data')
       )
-      .catch(error => console.error('Error!1-application/x-www-form-urlencoded'))
+      .catch(error => console.error('Error!1-multipart/form-data'))
     }
 }
 
