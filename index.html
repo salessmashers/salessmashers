@@ -881,10 +881,14 @@ function sendData(val)
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzrYtSCGoL6uf1dNpCothtEQNFtxMKqzpvz3DeLnVFdtpkPuaHg38YqJx-1rJaehrTu/exec';
         const form = document.forms['submit-to-google-sheet'];
         fetch(scriptURL, {
-  credentials: 'include', method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!')
+        mode: 'no-cors',
+        headers: {
+           "Content-Type": "application/json",
+        },
+          method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!1')
       )
-      .catch(error => console.error('Error!'))
+      .catch(error => console.error('Error!1'))
     }
 }
 
