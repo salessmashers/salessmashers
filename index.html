@@ -884,10 +884,10 @@ function sendData(val)
         mode: 'no-cors',
           credentials: 'include',
         headers: {
-           "Content-Type": "multipart/form-data",
+           "Content-Type": "text/plain",
         },
           method: 'POST', body: new FormData(form)})
-      .then(response => console.log(response)
+      .then(response => console.log(response+'text/plain')
       )
       .catch(error => console.error('Error!1-multipart/form-data'))
     }
