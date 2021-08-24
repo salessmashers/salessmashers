@@ -878,16 +878,16 @@ function sendData(val)
 {
     if(val==="Question-10")
     {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzrYtSCGoL6uf1dNpCothtEQNFtxMKqzpvz3DeLnVFdtpkPuaHg38YqJx-1rJaehrTu/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbymThMloA_KuuYVFek3Bh5H1JNRgUOjRSum9XBlJ23OKsZc4tdyA93v5iahPlaAnAYR/exec';
         const form = document.forms['submit-to-google-sheet'];
         fetch(scriptURL, {
         mode: 'no-cors',
           credentials: 'include',
         headers: {
-           "Content-Type": "text/plain",
+           "Content-Type": "multipart/form-data",
         },
           method: 'POST', body: new FormData(form)})
-      .then(response => console.log(response+'text/plain')
+      .then(response => console.log(response)
       )
       .catch(error => console.error('Error!1-multipart/form-data'))
     }
