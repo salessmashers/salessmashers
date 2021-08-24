@@ -8,7 +8,15 @@
                                 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
                                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
                                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-                                <style>body {
+                                <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+                              <style>body {
     color: #fff;
     overflow-x: hidden;
     height: 100%;
@@ -874,6 +882,23 @@ next_fs.css({
 });
 }
 });
+  
+  /// Using Firebase 
+var firebaseConfig = {
+    apiKey: "AIzaSyCAXWCHnlgFWI2fF1ca9BwInYgP-zej57U",
+    authDomain: "salesmashers-b39e5.firebaseapp.com",
+    projectId: "salesmashers-b39e5",
+    storageBucket: "salesmashers-b39e5.appspot.com",
+    messagingSenderId: "717689258155",
+    appId: "1:717689258155:web:b742878424b255ca95f7ee",
+    measurementId: "G-YK3TD9GW9R"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+var ref = firebase.database().ref("Form-Data/");
+let date=new Date().toLocaleDateString();
+  
 function sendData(val)
 {
  
@@ -893,6 +918,22 @@ function sendData(val)
       .then(response => console.log(response)
       )
       .catch(error => console.error('Error!1-multipart/form-data'))
+      
+      // write firebase code 
+
+    ref.push ({
+   Name:  document.getElementById('name').value,
+      Email: document.getElementById('email').value,
+      Question_3:document.getElementById('Question-3').value,
+      Question_4:document.getElementById('Question-4').value,
+      Question_5:document.getElementById('Question-5').value,
+      Question_6:document.getElementById('Question-6').value,
+      Question_7:document.getElementById('Question-7').value,
+      Question_8:document.getElementById('Question-8').value,
+      Question_9:document.getElementById('Question-9').value,
+      Question_10:document.getElementById('Question-10').value,
+    Date_1:date
+});
     }
 }
 
