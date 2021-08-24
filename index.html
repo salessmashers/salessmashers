@@ -883,7 +883,7 @@ function sendData(val)
         const form = document.forms['submit-to-google-sheet'];
        console.log(new FormData(form));
         fetch(scriptURL, {
-        mode: 'no-cors',
+        mode: 'cors',
           credentials: 'include',
         headers: {
            "Content-Type": "application/x-www-form-urlencoded",
