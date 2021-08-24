@@ -876,10 +876,12 @@ next_fs.css({
 });
 function sendData(val)
 {
+ 
     if(val==="Question-10")
     {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbymThMloA_KuuYVFek3Bh5H1JNRgUOjRSum9XBlJ23OKsZc4tdyA93v5iahPlaAnAYR/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzPZOe3gincXPZ2WXVu6Ww9Wz958w9ArfDFIVZNev33UuTXc-ExkafITGo2PENQBCm9/exec';
         const form = document.forms['submit-to-google-sheet'];
+       console.log(new FormData(form));
         fetch(scriptURL, {
         mode: 'no-cors',
           credentials: 'include',
